@@ -3,10 +3,10 @@ import {TemplateRef, ViewContainerRef} from 'angular2/core';
 import {Article} from '../../business/news/article';
 
 @Directive({
-    selector: '[newsList]'
+    selector: '[article]'
 })
 export class NewsListDirective {
-    articles: Array<Article>;
+    article: Article;
     
     private _templateRef: TemplateRef;
     private _viewContainer: ViewContainerRef;
@@ -15,8 +15,8 @@ export class NewsListDirective {
         
     }
     
-    @Input() set newsList(a: Array<Article>) {
-        this.articles = a;
+    @Input() set newsList(a: Article) {
+        this.article = a;
         this._viewContainer.createEmbeddedView(this._templateRef);
     }  
 }

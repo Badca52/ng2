@@ -1,0 +1,26 @@
+<style type="text/css">
+    .article{
+        padding:8px;
+    }
+    
+    .article:nth-child(even){
+        background-color: #aaa;
+    }
+    
+    .article h3{
+        font-weight:bold;
+    }
+    
+    .article-timestamp{
+        text-align: right;
+    }
+</style>
+<div class="article" *ngFor="#article of articles; #i = index">
+    <h3>{{article.title}}</h3>
+    <div>
+        {{article.story}}
+    </div>
+    <div class="article-timestamp">
+        {{article.timestamp | date:'fullDate'}}
+    </div>
+</div>

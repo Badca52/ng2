@@ -1,7 +1,9 @@
 import {Component} from 'angular2/core';
+import {NewsComponent} from './components/news/news.component';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    templateUrl: './app/views/home/index.html',
+    directives: [NewsComponent]
 })
 export class AppComponent { }
